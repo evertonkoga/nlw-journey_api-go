@@ -16,3 +16,5 @@
 - Gerar build e executar
     - docker-compose up --build -d -> builda e executa
     - docker-compose up -d -> executa
+
+## Comandos Kubernetes
