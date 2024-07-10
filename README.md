@@ -11,3 +11,8 @@
     - docker ps -a -> Todos executados
 - Visualizar o log
     - docker logs ID_OU_NOME_DO_CONTAINER
+
+## Comandos Docker Compose
+- Gerar build e executar
+    - docker-compose up --build -d -> builda e executa
+    - docker-compose up -d -> executa
