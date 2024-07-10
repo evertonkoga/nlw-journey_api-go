@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: journey-deployment
+  labels:
+    app: journey
+
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: journey
+  template:
+    metadata:
+      labels:
+        app: journey
+    spec:
+      containers:
+        - name: api-journey
+          image: evertonfabianokoga/nlw-journey_api-go:cf6b713
+          resources:
+            requests:
+              cpu: 200m
+              memory: 256Mi
+            limits:
+              cpu: 300m
+              memory: 256Mi
