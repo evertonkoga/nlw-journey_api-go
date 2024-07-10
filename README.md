@@ -41,6 +41,8 @@
     - kubectl get nodes
     - kubectl get po
 - Aplicar configurações
-    - kubectl apply -f k8s/deployment.yml -n journey
+    - kubectl apply -f k8s/deployment.yml -n journey -> Aplica deployment
+    - kubectl apply -f k8s/secret.yml -n journey -> Aplica secret
+    - kubectl apply -f k8s -n journey -> Aplica tudo
 - Deletar deployment
     - kubectl delete deployment journey-deployment -n journey

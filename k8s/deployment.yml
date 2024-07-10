@@ -19,6 +19,32 @@ spec:
       containers:
         - name: api-journey
           image: evertonfabianokoga/nlw-journey_api-go:cf6b713
+          env:
+          - name: JOURNEY_DATABASE_NAME
+            valueFrom:
+              secretKeyRef:
+                name: db-connection
+                key: db_name
+          - name: JOURNEY_DATABASE_USER
+            valueFrom:
+              secretKeyRef:
+                name: db-connection
+                key: db_user
+          - name: JOURNEY_DATABASE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: db-connection
+                key: db_password
+          - name: JOURNEY_DATABASE_PORT
+            valueFrom:
+              secretKeyRef:
+                name: db-connection
+                key: db_port
+          - name: JOURNEY_DATABASE_HOST
+            valueFrom:
+              secretKeyRef:
+                name: db-connection
+                key: db_host
           resources:
             requests:
               cpu: 200m
