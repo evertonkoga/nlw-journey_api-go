@@ -45,6 +45,7 @@ jobs:
     - name: Update image Helm
       uses: fjogeleit/yaml-update-action@main
       with:
+        targetBranch: main
         valueFile: 'deploy/values.yaml'
         propertyPath: 'image.tag'
         value: ${{ steps.generate_sha.outputs.sha }}
