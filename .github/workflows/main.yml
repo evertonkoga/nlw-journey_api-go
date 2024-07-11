@@ -41,3 +41,12 @@ jobs:
         tags: |
           ${{ secrets.DOCKERHUB_USERNAME }}/nlw-journey_api-go:${{ steps.generate_sha.outputs.sha }}
           ${{ secrets.DOCKERHUB_USERNAME }}/nlw-journey_api-go:latest
+
+    - name: Update image Helm
+      uses: fjogeleit/yaml-update-action@main
+      with:
+        valueFile: 'deploy/values.yaml'
+        propertyPath: 'image.tag'
+        value: ${{ steps.generate_sha.outputs.sha }}
+        commitChange: true
+        message: "new update tag in values Helm"

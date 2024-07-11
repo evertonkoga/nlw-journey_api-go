@@ -49,7 +49,11 @@
 - Deletar deployment
     - kubectl delete deployment journey-deployment -n journey
 
-## Comandos K3D - Kubernetes
+- Instalar Argo CD
+    - kubectl create namespace argocd -> criar name space
+    - kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+## Comandos Helm
 - Instalar
     - Abra o PowerShell com administrador
     - Instalar Chocolatey
@@ -64,3 +68,16 @@
     - helm create deploy
 - Atualizar ou Instalar os manifestos no cluster
     - helm upgrade --install journey deploy -n journey-helm
+- Deletar 
+    - helm uninstall journey -n journey-helm
+
+## Comandos Argo CD
+- Instalar
+    - Crirar name space
+        ```shell
+        kubectl create namespace argocd
+        ```
+    - Aplicar manifesto exteno
+        ```shell
+        kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+        ```
