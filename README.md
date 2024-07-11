@@ -40,6 +40,7 @@
     - kubectl cluster-info
     - kubectl get nodes
     - kubectl get po
+    - kubectl get service
 - Aplicar configurações
     - kubectl apply -f k8s/deployment.yml -n journey -> Aplica deployments
     - kubectl apply -f k8s/secret.yml -n journey -> Aplica secrets
@@ -47,3 +48,19 @@
     - kubectl apply -f k8s -n journey -> Aplica tudo
 - Deletar deployment
     - kubectl delete deployment journey-deployment -n journey
+
+## Comandos K3D - Kubernetes
+- Instalar
+    - Abra o PowerShell com administrador
+    - Instalar Chocolatey
+        ```shell
+        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+        ```
+    - Instalar Helm
+        ```shell
+        choco install kubernetes-helm
+        ```
+- Criar um diretório com Helm
+    - helm create deploy
+- Atualizar ou Instalar os manifestos no cluster
+    - helm upgrade --install journey deploy -n journey-helm
